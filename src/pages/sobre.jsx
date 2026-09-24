@@ -20,12 +20,12 @@ function Sobre() {
                     <div className="flex flex-col gap-8">
                         <div className="flex items-center gap-3">
                             <span className="block w-10 h-0.5 bg-teal-700" />
-                            <span className="text-teal-700 text-sm font-semibold tracking-[0.2em] uppercase">
+                            <span className="font-['Inter'] text-teal-700 text-sm font-semibold tracking-[0.2em] uppercase">
                                 Sobre nós
                             </span>
                         </div>
 
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
+                        <h2 className="text-3xl font-['Inter'] md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
                             Mais do que uma clínica: a segunda casa do seu pet.
                         </h2>
 
@@ -61,9 +61,9 @@ function Sobre() {
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center gap-10 mt-8">
+                <div className="flex flex-col items-center gap-10 mt-8 font-['Inter']">
                     <div className="w-full flex flex-col items-center gap-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-teal-700 leading-tight tracking-tight text-center">
+                        <h2 className="  text-3xl md:text-4xl font-bold text-teal-700 leading-tight tracking-tight text-center">
                             Contamos com:
                         </h2>
                         
@@ -83,7 +83,7 @@ function Sobre() {
 
                     <a 
                         href="#servicos" 
-                        className="px-8 py-3 bg-teal-700 border-2 border-teal-800 rounded-lg text-teal-50 text-xl font-bold hover:bg-teal-800 transition-colors"
+                        className="px-8 py-3 bg-teal-700 border-2 border-teal-800 rounded-lg text-teal-50 text-xl font-bold hover:text-gray-100 hover:bg-[#D4A853] transition-colors"
                     >
                         Saiba mais!!
                     </a>
