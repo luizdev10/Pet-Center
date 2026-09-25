@@ -159,7 +159,7 @@ function armazenarform(event){
 
           {modalAgendar && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4 py-6"
+              className="fixed inset-0 z-500 flex items-center justify-center bg-black/30 px-4 py-6"
               onClick={() => setmodalAgendar(false)}
             >
               <div
