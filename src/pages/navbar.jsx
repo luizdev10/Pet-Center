@@ -15,10 +15,10 @@ function NavBar() {
             nome: "SOBRE",
             url: "#sobre"
         },
-        {
+        /*{
             nome: "SHOP",
             url: "#shop"
-        },
+        },*/
         {
             nome: "BANHO E TOSA",
             url: "#banhoetosa"

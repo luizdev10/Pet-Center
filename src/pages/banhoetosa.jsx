@@ -1,8 +1,66 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+
 
 export default function BanhoTosa() {
   const [modalAgendar, setmodalAgendar] = useState(false)
+  const [servisoDesejado, setservicoDesejado] = useState("")
+
+  useEffect(() => {
+    if (modalAgendar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modalAgendar]);
+
+  const [form, setForm] = useState({
+  nomeTutor: "",
+  nomePet: "",
+  telefone: "",
+  porte: "",
+  raca: "",
+  dataPreferencia: "",
+  horarioPreferencia: "",
+
+});
+
+function armazenarform(event){
+  const {name, value} = event.target;
+
+  setForm((prev)=>({
+    ...prev, [name]:value,
+  }))
+}
+
+  function enviarwhatsbanho(event) {
+    event.preventDefault();
+
+    const mensagem = `Olá tudo bem? eu gostaria de agendar um serviço.
+
+    Serviço: ${servisoDesejado}
+    nome do tutor: ${form.nomeTutor}
+    nome do pet: ${form.nomePet}
+    telefone: ${form.telefone}
+    porte: ${form.porte}
+    raça: ${form.raca}
+    data de preferência: ${form.dataPreferencia}
+    Horario de preferência: ${form.horarioPreferencia}
+   
+   quanto ficaria o serviço?
+    `.trim();
+
+
+    const urlEnvio = "https://wa.me/5588988853140?text=" + encodeURIComponent(mensagem);
+
+    window.open(urlEnvio, "_blank");
+
+
+  }
+
+
   const servicos = [
     {
       nome: "Banho",
@@ -71,8 +129,8 @@ export default function BanhoTosa() {
 
 
         </section>
-        <section className="w-full h-full bg-orange-100 font-['Inter']" id="servicos">
-          <div className="flex flex-col justify-center items-center px-4 pt-5 ">
+        <section className="w-full h-screen bg-orange-100 font-['Inter']" id="servicos">
+          <div className="flex flex-col justify-center items-center px-4 pt-20">
             <p className="text-orange-500 font-['Inter'] text-sm">NOSSOS SERVIÇOS</p>
             <h1 className="text-center font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter']">Tudo para manter seu pet bem cuidado.</h1>
             <p className="text-orange-600 text-md w-80 text-center md:text-lg">Escolha o serviços para as necessidades do seu pet.</p>
@@ -92,39 +150,206 @@ export default function BanhoTosa() {
                   <span className="font-bold text-lg text-gray-800">{item.preco}</span>
                 </div>
 
-                <button onClick={() => setmodalAgendar(true)} className="bg-orange-500 px-4 py-2 text-white text-sm text-center rounded-lg cursor-pointer font-['Inter'] font-semibold hover:bg-orange-400 transition-colors shadow-sm">
+                <button onClick={() => { setmodalAgendar(true); setservicoDesejado(item.nome) }} className="bg-orange-500 px-4 py-2 text-white text-sm text-center rounded-lg cursor-pointer font-['Inter'] font-semibold hover:bg-orange-400 transition-colors shadow-sm">
                   Agendar Banho
                 </button>
 
                 {modalAgendar && (
-                  <div className="fixed inset-0 bg-blur backdrop-blur-[1px] flex items-center justify-center">
-                    <div className="w-[300px] h-[500px] bg-white border border-gray-300 rounded-lg p-2 flex flex-col ">
-                      <h3 className="flex justify-center">Agendar Serviço</h3>
-                      <div className="px-4 py-4 flex ">
-                        <form>
-                          <div>
-                            <label htmlFor="nome">Seu Nome</label>
-                            <input type="text" placeholder="Digite seu nome" />
-                          </div>
-                          <div>
-                            <label htmlFor="nome">Nome do Pet</label>
-                            <input type="text" placeholder="Digite o nome do pet" />
-                          </div>
-                          <div>
-                            <label htmlFor="nome">Data de Preferência</label>
-                            <input type="date" placeholder="Digite a data" />
-                          </div>
-                          <div>
-                            <label htmlFor="nome">Horario de Preferência</label>
-                            <input type="time" placeholder="Digite seu nome" />
-                          </div>
-                          <div>
-                            <label htmlFor="nome">Telefone</label>
-                            <input type="text" placeholder="Digite seu telefone" />
-                          </div>
-                          <button type="submit">Agendar</button>
-                        </form>
+                  <div
+                    className="fixed inset-0 z-500 flex items-center justify-center bg-black/10 px-4 py-6 backdrop-blur-[1px]"
+                    onClick={() => setmodalAgendar(false)}
+                  >
+                    <div
+                      role="dialog"
+                      aria-modal="true"
+                      aria-labelledby="titulo-agendamento"
+                      className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl"
+                      onClick={(event) => event.stopPropagation()}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setmodalAgendar(false)}
+                        aria-label="Fechar formulário"
+                        className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-2xl text-gray-400 transition hover:bg-gray-100 hover:text-gray-700"
+                      >
+                        &times;
+                      </button>
+
+                      <div className="mb-6 pr-8">
+                        <p className="text-sm font-semibold uppercase tracking-wide text-orange-500">
+                          Agendamento
+                        </p>
+
+                        <h3
+                          id="titulo-agendamento"
+                          className="mt-1 text-2xl font-bold text-gray-800"
+                        >
+                          Agendar serviço
+                        </h3>
+
+                        <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                          Preencha seus dados e entraremos em contato para confirmar o
+                          atendimento.
+                        </p>
                       </div>
+
+                      <form className="flex flex-col gap-4 font-['Inter']" onSubmit={enviarwhatsbanho}>
+                        <div className="flex flex-col gap-1">
+                          <label
+                            htmlFor="nomeTutor"
+                            className="text-sm font-medium text-gray-700"
+                          >
+                            Seu nome
+                          </label>
+
+                          <input
+                            id="nomeTutor"
+                            name="nomeTutor"
+                            value={form.nomeTutor}
+                            onChange={armazenarform}
+                            type="text"
+                            placeholder="Digite seu nome"
+                            className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                            required
+                          />
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                          <label
+                            htmlFor="nomePet"
+                            className="text-sm font-medium text-gray-700"
+                          >
+                            Nome do pet
+                          </label>
+
+                          <input
+                            id="nomePet"
+                            name="nomePet"
+                            value={form.nomePet}
+                            onChange={armazenarform}
+                            type="text"
+                            placeholder="Digite o nome do pet"
+                            className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                            required
+                          />
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                          <label
+                            htmlFor="telefone"
+                            className="text-sm font-medium text-gray-700"
+                          >
+                            Telefone
+                          </label>
+
+                          <input
+                            id="telefone"
+                            name="telefone"
+                            value={form.telefone}
+                            onChange={armazenarform}
+                            type="tel"
+                            placeholder="(XX) XXXXX-XXXX"
+                            className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                            required
+                          />
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                          <label htmlFor="porte" className="text-sm font-medium text-gray-700">
+                            Porte do pet
+                          </label>
+
+                          <select
+                            id="porte"
+                            name="porte"
+                            value={form.porte}
+                            onChange={armazenarform}
+                            className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                            required
+                          >
+                            <option value="" disabled>
+                              Selecione o porte
+                            </option>
+                            <option value="Pequeno">Pequeno</option>
+                            <option value="Médio">Médio</option>
+                            <option value="Grande">Grande</option>
+                          </select>
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                          <label htmlFor="raca" className="text-sm font-medium text-gray-700">
+                            Raça
+                          </label>
+
+                          <input
+                            id="raca"
+                            name="raca"
+                            value={form.raca}
+                            onChange={armazenarform}
+                            type="text"
+                            placeholder="Digite a raça do pet"
+                            className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                            required
+                          />
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                          <div className="flex min-w-0 flex-col gap-1">
+                            <label
+                              htmlFor="dataPreferencia"
+                              className="text-sm font-medium text-gray-700"
+                            >
+                              Data de preferência
+                            </label>
+
+                            <input
+                              id="dataPreferencia"
+                              name="dataPreferencia"
+                              value={form.dataPreferencia}
+                              onChange={armazenarform}
+                              type="date"
+                              className="w-full min-w-0 rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                              required
+                            />
+                          </div>
+
+                          <div className="flex min-w-0 flex-col gap-1">
+                            <label
+                              htmlFor="horarioPreferencia"
+                              className="text-sm font-medium text-gray-700"
+                            >
+                              Horário de preferência
+                            </label>
+
+                            <input
+                              id="horarioPreferencia"
+                              name="horarioPreferencia"
+                              value={form.horarioPreferencia}
+                              onChange={armazenarform}
+                              type="time"
+                              className="w-full min-w-0 rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div className="mt-2 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+                          <button
+                            type="button"
+                            onClick={() => setmodalAgendar(false)}
+                            className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-600 transition hover:bg-gray-100"
+                          >
+                            Cancelar
+                          </button>
+
+                          <button
+                            type="submit"
+                        
+                            className="rounded-lg bg-green-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+                          >
+                            Agendar pelo WhatsApp
+                          </button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 )}
