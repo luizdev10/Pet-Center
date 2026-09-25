@@ -107,7 +107,7 @@ function armazenarform(event){
 
             <div className="pt-4 flex gap-4">
               <a href="#" className="bg-orange-500 p-3 text-white text-sm flex text-center items-center rounded-md cursor-pointer font-['Inter'] font-semibold text-capitalize hover:bg-orange-400">Agendar Banho</a>
-              <a href="#servicos" className=" p-3 font-['Inter'] text-capitalize  text-sm flex text-center items-center border-2 border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition-colors duration-300 cursor-pointer">Conhecer Serviçoes</a>
+              <a href="#servicos" className=" p-3 font-['Inter'] text-capitalize  text-sm flex text-center items-center border-2 border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition-colors duration-300 cursor-pointer">Conhecer Serviços</a>
             </div>
 
 
@@ -129,16 +129,17 @@ function armazenarform(event){
 
 
         </section>
-        <section className="w-full h-screen bg-orange-100 font-['Inter']" id="servicos">
-          <div className="flex flex-col justify-center items-center px-4 pt-20">
+        <section className="w-full h-full bg-orange-100 font-['Inter'] py-4" id="servicos">
+          <div className="flex flex-col justify-center items-center px-4 pt-10">
             <p className="text-orange-500 font-['Inter'] text-sm">NOSSOS SERVIÇOS</p>
             <h1 className="text-center font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter']">Tudo para manter seu pet bem cuidado.</h1>
-            <p className="text-orange-600 text-md w-80 text-center md:text-lg">Escolha o serviços para as necessidades do seu pet.</p>
+            <p className="text-orange-600 text-md w-80 text-center md:text-lg lg:w-100">Escolha o serviços para as necessidades do seu pet.</p>
             <p className="text-[10px] w-80 text-center font-light">Lembrando que os precos podem ser alterados conforme o tamanho do pet.</p>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-6 max-w-4xl mx-auto">
           {servicos.map((item) => (
-            <div key={item.nome} className="bg-white rounded-xl shadow-sm p-4 flex flex-col gap-3 border border-gray-100 mx-3 my-3 ">
-              <h4 className="hidden">{item.nome}</h4>
+            <div key={item.nome} className="bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3 border border-gray-100 w-full">
+              <h4 className="hidden lg:flex font-bold">{item.nome}</h4>
 
               <p className="font-light text-gray-600 text-sm leading-relaxed">
                 {item.descricao}
@@ -156,6 +157,7 @@ function armazenarform(event){
               </div>
             </div>
           ))}
+          </div>
 
           {modalAgendar && (
             <div
@@ -296,45 +298,7 @@ function armazenarform(event){
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <div className="flex min-w-0 flex-col gap-1">
-                      <label
-                        htmlFor="dataPreferencia"
-                        className="text-sm font-medium text-gray-700"
-                      >
-                        Data de preferência
-                      </label>
-
-                      <input
-                        id="dataPreferencia"
-                        name="dataPreferencia"
-                        value={form.dataPreferencia}
-                        onChange={armazenarform}
-                        type="date"
-                        className="w-full min-w-0 rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
-                        required
-                      />
-                    </div>
-
-                    <div className="flex min-w-0 flex-col gap-1">
-                      <label
-                        htmlFor="horarioPreferencia"
-                        className="text-sm font-medium text-gray-700"
-                      >
-                        Horário de preferência
-                      </label>
-
-                      <input
-                        id="horarioPreferencia"
-                        name="horarioPreferencia"
-                        value={form.horarioPreferencia}
-                        onChange={armazenarform}
-                        type="time"
-                        className="w-full min-w-0 rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
-                        required
-                      />
-                    </div>
-                  </div>
+              
                   <div className="mt-2 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
                     <button
                       type="button"

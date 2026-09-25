@@ -20,11 +20,11 @@ function NavBar() {
             url: "#shop"
         },*/
         {
-            nome: "BANHO E TOSA",
+            nome: "BANHO & TOSA",
             url: "#banhoetosa"
         },
         {
-            nome: "CONSULTAS",
+            nome: "CONSULTA",
             url: "#consultas"
         }
 

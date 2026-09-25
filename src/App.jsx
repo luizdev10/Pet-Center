@@ -3,6 +3,7 @@ import Inicio from "./pages/inicio";
 import Sobre from "./pages/sobre";
 //import Shop from "./pages/shop";
 import BanhoTosa from "./pages/banhoetosa";
+import Consultas from "./pages/consulta";
 function App() {
 
   return (
@@ -12,6 +13,7 @@ function App() {
       <Sobre />
      {/* <Shop />*/}
     <BanhoTosa />
+    <Consultas />
     </>
   )
 }
