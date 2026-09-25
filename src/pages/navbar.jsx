@@ -46,10 +46,10 @@ function NavBar() {
                 <button onClick={() => setMenu(!menu)} className="md:hidden text-zinc-500">
                     {menu ? <X size={30} /> : < Menu size={30} />}
                 </button>
-                <a href="https://wa.me/558888597138?text=Olá!%20Tudo%20bem." target="_blank" rel="noopener noreferrer" className="hidden md:flex font-['Inter'] text-white text-sm font-semibold text-capitalize cursor-pointer bg-emerald-800 px-4 py-2 rounded-md w-max hover:bg-[#D4A853] hover:text-emerald-950 transition-all duration-300 shadow-md">Agendar</a>
+                <a href="#consultas" className="hidden md:flex font-['Inter'] text-white text-sm font-semibold text-capitalize cursor-pointer bg-emerald-800 px-4 py-2 rounded-md w-max hover:bg-[#D4A853] hover:text-emerald-950 transition-all duration-300 shadow-md">Agendar</a>
             </div>
             <div
-                className={`md:hidden bg-emerald-800 w-full overflow-hidden transition-all duration-300 ease-in-out ${menu ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                className={`md:hidden bg-[#FDFAF3] w-full overflow-hidden transition-all duration-300 ease-in-out ${menu ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
             >
                 <ul className="flex flex-col px-5 py-5 gap-5 items-start cursor-pointer">
@@ -58,7 +58,7 @@ function NavBar() {
                             <a
                                 href={link.url}
                                 onClick={() => setMenu(false)}
-                                className="text-gray-50 font-semibold block hover:text-zinc-200 transition-colors cursor-pointer"
+                                className="text-gray-500 font-semibold block hover:text-zinc-400 transition-colors cursor-pointer"
                             >
                                 {link.nome}
                             </a>

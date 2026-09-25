@@ -43,7 +43,7 @@ Informações adicionais: ${obter("observacoes")}
     "w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-100";
 
   return (
-    <main className="bg-stone-50 text-stone-800">
+    <main id="consultas" className="bg-stone-50 text-stone-800">
 
       <section className="px-5 py-16 md:px-10 lg:px-20">
         <div className="mx-auto max-w-3xl">

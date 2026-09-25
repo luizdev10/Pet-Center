@@ -22,8 +22,6 @@ export default function BanhoTosa() {
   telefone: "",
   porte: "",
   raca: "",
-  dataPreferencia: "",
-  horarioPreferencia: "",
 
 });
 
@@ -46,9 +44,6 @@ function armazenarform(event){
     telefone: ${form.telefone}
     porte: ${form.porte}
     raça: ${form.raca}
-    data de preferência: ${form.dataPreferencia}
-    Horario de preferência: ${form.horarioPreferencia}
-   
    quanto ficaria o serviço?
     `.trim();
 
@@ -86,7 +81,7 @@ function armazenarform(event){
   return (
     <>
       <main>
-        <section id="banhoetosa" className="w-full h-full bg-[#F7F1E1] flex px-8 lg:justify-around">
+        <section id="banhoetosa" className="w-full h-full bg-[#F7F1E1] flex px-8 lg:justify-around scroll-mt-24">
           <div className="pt-12 w-full lg:w-120 ">
 
             <p className="text-orange-500 font-['Inter'] text-sm">  BANHO & TOSA</p>
@@ -106,7 +101,7 @@ function armazenarform(event){
 
 
             <div className="pt-4 flex gap-4">
-              <a href="#" className="bg-orange-500 p-3 text-white text-sm flex text-center items-center rounded-md cursor-pointer font-['Inter'] font-semibold text-capitalize hover:bg-orange-400">Agendar Banho</a>
+              <a href="#servicos" className="bg-orange-500 p-3 text-white text-sm flex text-center items-center rounded-md cursor-pointer font-['Inter'] font-semibold text-capitalize hover:bg-orange-400">Agendar Banho</a>
               <a href="#servicos" className=" p-3 font-['Inter'] text-capitalize  text-sm flex text-center items-center border-2 border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition-colors duration-300 cursor-pointer">Conhecer Serviços</a>
             </div>
 
@@ -129,7 +124,7 @@ function armazenarform(event){
 
 
         </section>
-        <section className="w-full h-full bg-orange-100 font-['Inter'] py-4" id="servicos">
+        <section id="servicos" className="w-full h-full bg-orange-100 font-['Inter'] py-4 scroll-mt-24" >
           <div className="flex flex-col justify-center items-center px-4 pt-10">
             <p className="text-orange-500 font-['Inter'] text-sm">NOSSOS SERVIÇOS</p>
             <h1 className="text-center font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter']">Tudo para manter seu pet bem cuidado.</h1>
@@ -297,6 +292,9 @@ function armazenarform(event){
                       required
                     />
                   </div>
+                  <p className="text-center text-[10px] text-red-500">
+                    *Os valores podem sofrer alterações conforme o tamanho do pet*
+                  </p>
 
               
                   <div className="mt-2 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
