@@ -66,7 +66,11 @@ export default function Footer() {
 
             <li className="flex items-start gap-3">
               <MapPin aria-hidden="true" className="mt-1 h-5 w-5 shrink-0" />
-              <span>Adicione aqui o endereço do pet shop</span>
+              <a href="https://www.google.com/maps/place/Pet+Center+Cariri/@-7.2034765,-39.3119106,385a,75y,229.12h,77.01t/data=!3m7!1e1!3m5!1sxF6WRHQ5dFcjxxkGeYyA6w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D12.991644371644753%26panoid%3DxF6WRHQ5dFcjxxkGeYyA6w%26yaw%3D229.1173721186526!7i16384!8i8192!4m10!1m2!2m1!1spet+center!3m6!1s0x7a17f6a8f80fbdf:0xa52eb751751fb88b!8m2!3d-7.2035889!4d-39.3119071!15sCgpwZXQgY2VudGVyWgwiCnBldCBjZW50ZXKSAQ9hbmltYWxfaG9zcGl0YWyaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTjFMV00yZVZwM0VBReABAPoBBAgAEDE!16s%2Fg%2F11jvkc2snv?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="transition hover:text-white hover:underline">
+                <span>Rua do Cruzeiro - 806</span>
+                <br />
+                <span>Centro - Juazeiro do Norte/CE</span>
+              </a>
             </li>
           </ul>
         </div>

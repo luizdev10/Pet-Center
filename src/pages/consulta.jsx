@@ -24,8 +24,6 @@ Idade: ${obter("idade")}
 SOBRE A CONSULTA
 Motivo: ${obter("motivo")}
 Quando começou: ${obter("inicio")}
-Data preferida: ${obter("dataPreferida")}
-Horário preferido: ${obter("horarioPreferido")}
 Informações adicionais: ${obter("observacoes")}
     `.trim();
 
