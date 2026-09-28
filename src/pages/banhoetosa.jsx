@@ -1,163 +1,199 @@
 import { useEffect, useState } from "react";
-
+import fundomobile from "../assets/img/fundomobile.jpg";
 
 export default function BanhoTosa() {
-  const [modalAgendar, setmodalAgendar] = useState(false)
-  const [servisoDesejado, setservicoDesejado] = useState("")
+  const [modalAgendar, setModalAgendar] = useState(false);
+  const [servicoDesejado, setServicoDesejado] = useState("");
 
   useEffect(() => {
     if (modalAgendar) {
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     } else {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
     }
     return () => {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
     };
   }, [modalAgendar]);
 
   const [form, setForm] = useState({
-  nomeTutor: "",
-  nomePet: "",
-  telefone: "",
-  porte: "",
-  raca: "",
+    nomeTutor: "",
+    nomePet: "",
+    telefone: "",
+    porte: "",
+    raca: "",
+  });
 
-});
+  function armazenarForm(event) {
+    const { name, value } = event.target;
 
-function armazenarform(event){
-  const {name, value} = event.target;
-
-  setForm((prev)=>({
-    ...prev, [name]:value,
-  }))
-}
-
-  function enviarwhatsbanho(event) {
-    event.preventDefault();
-
-    const mensagem = `Olá tudo bem? eu gostaria de agendar um serviço.
-
-    Serviço: ${servisoDesejado}
-    nome do tutor: ${form.nomeTutor}
-    nome do pet: ${form.nomePet}
-    telefone: ${form.telefone}
-    porte: ${form.porte}
-    raça: ${form.raca}
-   quanto ficaria o serviço?
-    `.trim();
-
-
-    const urlEnvio = "https://wa.me/5588988853140?text=" + encodeURIComponent(mensagem);
-
-    window.open(urlEnvio, "_blank");
-
-
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   }
 
+  function enviarWhatsBanho(event) {
+    event.preventDefault();
+
+    const mensagem = `Olá, tudo bem? Gostaria de agendar um serviço.
+
+Serviço: ${servicoDesejado}
+Nome do tutor: ${form.nomeTutor}
+Nome do pet: ${form.nomePet}
+Telefone: ${form.telefone}
+Porte: ${form.porte}
+Raça: ${form.raca}
+
+Quanto ficaria o serviço?`.trim();
+
+    const urlEnvio =
+      "https://wa.me/5588988853140?text=" + encodeURIComponent(mensagem);
+
+    window.open(urlEnvio, "_blank");
+  }
 
   const servicos = [
     {
       nome: "Banho",
       descricao: "Banho completo com produtos de alta qualidade",
-      preco: "R$ 50,00"
+      preco: "R$ 50,00",
     },
     {
       nome: "Tosa",
       descricao: "Tosa completa com produtos de alta qualidade",
-      preco: "R$ 50,00"
+      preco: "R$ 50,00",
     },
     {
       nome: "Hidratação",
       descricao: "Hidratação completa com produtos de alta qualidade",
-      preco: "R$ 50,00"
+      preco: "R$ 50,00",
     },
     {
       nome: "Banho e Tosa Completa",
       descricao: "Banho e Tosa completa com produtos de alta qualidade",
-      preco: "R$ 50,00"
-    }
-  ]
+      preco: "R$ 50,00",
+    },
+  ];
+
   return (
     <>
       <main>
-        <section id="banhoetosa" className="w-full h-full bg-[#F7F1E1] flex px-8 lg:justify-around scroll-mt-24">
+        <section
+          id="banhoetosa"
+          className="w-full h-full bg-[#F7F1E1] flex px-8 lg:justify-around scroll-mt-24"
+        >
           <div className="pt-12 w-full lg:w-120 ">
-
-            <p className="text-orange-500 font-['Inter'] text-sm">  BANHO & TOSA</p>
-            <h1 className="font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter'] ">Cuidado, carinho e bem-estar para seu pet</h1>
-
+            <p className="text-orange-500 font-['Inter'] text-sm">
+              {" "}
+              BANHO & TOSA
+            </p>
+            <h1 className="font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter'] ">
+              Cuidado, carinho e bem-estar para seu pet
+            </h1>
 
             <div className="flex items-center md:pt-8">
               <p className="text-gray-600 text-sm md:text-lg">
-                Oferecemos serviços de banho e tosa pensados para manter seu pet limpo, saudável e confortável.
+                Oferecemos serviços de banho e tosa pensados para manter seu pet
+                limpo, saudável e confortável.
               </p>
-              <div className="p-5 md:hidden">
-                <div className="h-45 w-45 bg-amber-900">
-
-                </div>
-              </div>
             </div>
-
 
             <div className="pt-4 flex gap-4">
-              <a href="#servicos" className="bg-orange-500 p-3 text-white text-sm flex text-center items-center rounded-md cursor-pointer font-['Inter'] font-semibold text-capitalize hover:bg-orange-400">Agendar Banho</a>
-              <a href="#servicos" className=" p-3 font-['Inter'] text-capitalize  text-sm flex text-center items-center border-2 border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition-colors duration-300 cursor-pointer">Conhecer Serviços</a>
+              <a
+                href="#servicos"
+                className="bg-orange-500 p-3 text-white text-sm flex text-center items-center rounded-md cursor-pointer font-['Inter'] font-semibold capitalize hover:bg-orange-400"
+              >
+                Agendar Banho
+              </a>
+              <a
+                href="#servicos"
+                className=" p-3 font-['Inter'] capitalize text-sm flex text-center items-center border-2 border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition-colors duration-300 cursor-pointer"
+              >
+                Conhecer Serviços
+              </a>
             </div>
-
 
             <div className="pt-3 pb-2 flex justify-around md:gap-2 font-light">
               <p className="text-[12px] md:text-sm">Atendimento Personalizado</p>
               <p className="text-[12px] md:text-sm">Produtos de Qualidade</p>
               <p className="text-[12px] md:text-sm">Ambiente Seguro</p>
             </div>
-
-
-
           </div>
 
           <div className="p-5 hidden md:flex items-center">
-            <div className="h-80 w-80  lg:w-140 lg:h-120 bg-amber-600">
-
-            </div>
+            <img
+              src={fundomobile}
+              alt="Banho e Tosa"
+              className="h-80 w-80 lg:w-140 lg:h-100 object-cover rounded-3xl shadow-md"
+            />
           </div>
-
-
         </section>
-        <section id="servicos" className="w-full h-full bg-orange-100 font-['Inter'] py-4 scroll-mt-24" >
+
+        <section
+          id="servicos"
+          className="w-full h-full bg-orange-100 font-['Inter'] py-4 scroll-mt-24"
+        >
           <div className="flex flex-col justify-center items-center px-4 pt-10">
-            <p className="text-orange-500 font-['Inter'] text-sm">NOSSOS SERVIÇOS</p>
-            <h1 className="text-center font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter']">Tudo para manter seu pet bem cuidado.</h1>
-            <p className="text-orange-600 text-md w-80 text-center md:text-lg lg:w-100">Escolha o serviços para as necessidades do seu pet.</p>
-            <p className="text-[10px] w-80 text-center font-light">Lembrando que os precos podem ser alterados conforme o tamanho do pet.</p>
+            <p className="text-orange-500 font-['Inter'] text-sm">
+              NOSSOS SERVIÇOS
+            </p>
+            <h1 className="text-center font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter']">
+              Tudo para manter seu pet bem cuidado.
+            </h1>
+            <p className="text-orange-600 text-md w-80 text-center md:text-lg lg:w-100">
+              Escolha os serviços para as necessidades do seu pet.
+            </p>
+            <p className="text-[10px] w-80 text-center font-light">
+              Lembrando que os preços podem ser alterados conforme o tamanho do
+              pet.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-6 max-w-4xl mx-auto">
-          {servicos.map((item) => (
-            <div key={item.nome} className="bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3 border border-gray-100 w-full">
-              <h4 className="hidden lg:flex font-bold">{item.nome}</h4>
+            {servicos.map((item) => (
+              <div
+                key={item.nome}
+                className="bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3 border border-gray-100 w-full"
+              >
+                <h3 className="font-bold text-lg text-gray-800">
+                  {item.nome}
+                </h3>
 
-              <p className="font-light text-gray-600 text-sm leading-relaxed">
-                {item.descricao}
-              </p>
+                <p className="font-light text-gray-600 text-sm leading-relaxed">
+                  {item.descricao}
+                </p>
 
-              <div className="flex items-center justify-between mt-1 border-t border-gray-50 pt-3">
-                <div className="flex flex-col">
-                  <span className="text-[10px] text-gray-400 uppercase tracking-wide">a partir de</span>
-                  <span className="font-bold text-lg text-gray-800">{item.preco}</span>
+                <div className="flex items-center justify-between mt-1 border-t border-gray-50 pt-3">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-gray-400 uppercase tracking-wide">
+                      a partir de
+                    </span>
+                    <span className="font-bold text-lg text-gray-800">
+                      {item.preco}
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      setModalAgendar(true);
+                      setServicoDesejado(item.nome);
+                    }}
+                    className="bg-orange-500 px-4 py-2 text-white text-sm text-center rounded-lg cursor-pointer font-['Inter'] font-semibold hover:bg-orange-400 transition-colors shadow-sm"
+                  >
+                    Agendar Banho
+                  </button>
                 </div>
-
-                <button onClick={() => { setmodalAgendar(true); setservicoDesejado(item.nome) }} className="bg-orange-500 px-4 py-2 text-white text-sm text-center rounded-lg cursor-pointer font-['Inter'] font-semibold hover:bg-orange-400 transition-colors shadow-sm">
-                  Agendar Banho
-                </button>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
 
           {modalAgendar && (
             <div
-              className="fixed inset-0 z-500 flex items-center justify-center bg-black/30 px-4 py-6"
-              onClick={() => setmodalAgendar(false)}
+              className="fixed inset-0 z-[500] flex items-center justify-center bg-black/30 px-4 py-6"
+              onClick={() => setModalAgendar(false)}
             >
               <div
                 role="dialog"
@@ -168,7 +204,7 @@ function armazenarform(event){
               >
                 <button
                   type="button"
-                  onClick={() => setmodalAgendar(false)}
+                  onClick={() => setModalAgendar(false)}
                   aria-label="Fechar formulário"
                   className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-2xl text-gray-400 transition hover:bg-gray-100 hover:text-gray-700"
                 >
@@ -193,7 +229,7 @@ function armazenarform(event){
                   </p>
                 </div>
 
-                <form className="flex flex-col gap-4 font-['Inter']" onSubmit={enviarwhatsbanho}>
+                <form className="flex flex-col gap-4 font-['Inter']" onSubmit={enviarWhatsBanho}>
                   <div className="flex flex-col gap-1">
                     <label
                       htmlFor="nomeTutor"
@@ -206,7 +242,7 @@ function armazenarform(event){
                       id="nomeTutor"
                       name="nomeTutor"
                       value={form.nomeTutor}
-                      onChange={armazenarform}
+                      onChange={armazenarForm}
                       type="text"
                       placeholder="Digite seu nome"
                       className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
@@ -226,7 +262,7 @@ function armazenarform(event){
                       id="nomePet"
                       name="nomePet"
                       value={form.nomePet}
-                      onChange={armazenarform}
+                      onChange={armazenarForm}
                       type="text"
                       placeholder="Digite o nome do pet"
                       className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
@@ -246,7 +282,7 @@ function armazenarform(event){
                       id="telefone"
                       name="telefone"
                       value={form.telefone}
-                      onChange={armazenarform}
+                      onChange={armazenarForm}
                       type="tel"
                       placeholder="(XX) XXXXX-XXXX"
                       className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
@@ -263,7 +299,7 @@ function armazenarform(event){
                       id="porte"
                       name="porte"
                       value={form.porte}
-                      onChange={armazenarform}
+                      onChange={armazenarForm}
                       className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
                       required
                     >
@@ -285,7 +321,7 @@ function armazenarform(event){
                       id="raca"
                       name="raca"
                       value={form.raca}
-                      onChange={armazenarform}
+                      onChange={armazenarForm}
                       type="text"
                       placeholder="Digite a raça do pet"
                       className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
@@ -300,7 +336,7 @@ function armazenarform(event){
                   <div className="mt-2 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
                     <button
                       type="button"
-                      onClick={() => setmodalAgendar(false)}
+                      onClick={() => setModalAgendar(false)}
                       className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-600 transition hover:bg-gray-100"
                     >
                       Cancelar

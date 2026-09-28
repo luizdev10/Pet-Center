@@ -30,7 +30,7 @@ function Sobre() {
                         </h2>
 
                         <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                            A nossa história começou há 6 anos com um objetivo simples, mas poderoso: oferecer medicina veterinária de excelência com o amor e o carinho que os nossos animais merecem. Ao longo desta trajetória, crescemos, modernizámos o nosso espaço e formámos uma equipa apaixonada. Hoje, orgulhamo-nos de ser uma referência na região, acompanhando o seu melhor amigo desde os primeiros passos.
+                            A nossa história começou há 6 anos com um objetivo simples, mas poderoso: oferecer medicina veterinária de excelência com o amor e o carinho que os nossos animais merecem. Ao longo desta trajetória, crescemos, modernizamos o nosso espaço e formamos uma equipe apaixonada. Hoje, orgulhamo-nos de ser uma referência na região, acompanhando o seu melhor amigo desde os primeiros passos.
                         </p>
 
                         <div className="grid grid-cols-3 gap-6 pt-4 border-t border-gray-300">
@@ -63,17 +63,17 @@ function Sobre() {
 
                 <div className="flex flex-col items-center gap-10 mt-8 font-['Inter']">
                     <div className="w-full flex flex-col items-center gap-6">
-                        <h2 className="  text-3xl md:text-4xl font-bold text-teal-700 leading-tight tracking-tight text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold text-teal-700 leading-tight tracking-tight text-center">
                             Contamos com:
                         </h2>
                         
                         <div className="flex gap-4 flex-wrap justify-center items-center">
-                            {servicos.map((item) => (
+                            {servicos.map((item, index) => (
                                 <div key={item.id} className="flex items-center gap-4">
                                     <span className="font-semibold text-xl md:text-2xl text-teal-800">
                                         {item.nome}
                                     </span>
-                                    {item.id !== servicos.length && (
+                                    {index !== servicos.length - 1 && (
                                         <span className="h-6 border-l-2 border-teal-500"></span>
                                     )}
                                 </div>
@@ -85,7 +85,7 @@ function Sobre() {
                         href="#servicos" 
                         className="px-8 py-3 bg-teal-700 border-2 border-teal-800 rounded-lg text-teal-50 text-xl font-bold hover:text-gray-100 hover:bg-[#D4A853] transition-colors"
                     >
-                        Saiba mais!!
+                        Saiba mais
                     </a>
                 </div>
 

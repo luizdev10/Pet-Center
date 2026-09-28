@@ -8,7 +8,7 @@ function NavBar() {
 
     const links = [
         {
-            nome: "ÍNICIO",
+            nome: "INÍCIO",
             url: "#inicio"
         },
         {
@@ -30,7 +30,7 @@ function NavBar() {
 
     ]
     return (
-        <nav className="bg-[#FDFAF3] top-0 left-0 fixed w-full z-500 shadow-sm">
+        <nav className="bg-[#FDFAF3] top-0 left-0 fixed w-full z-[500] shadow-sm">
             <div className="flex justify-around items-center w-full px-6 py-2">
                 <div className="flex items-center gap-2">
                     <img src={logo} alt="logo" className="w-12 h-12 md:w-13 md:h-13 rounded-2xl" />
@@ -44,9 +44,9 @@ function NavBar() {
                     ))}
                 </ul>
                 <button onClick={() => setMenu(!menu)} className="md:hidden text-zinc-500">
-                    {menu ? <X size={30} /> : < Menu size={30} />}
+                    {menu ? <X size={30} /> : <Menu size={30} />}
                 </button>
-                <a href="#consultas" className="hidden md:flex font-['Inter'] text-white text-sm font-semibold text-capitalize cursor-pointer bg-emerald-800 px-4 py-2 rounded-md w-max hover:bg-[#D4A853] hover:text-emerald-950 transition-all duration-300 shadow-md">Agendar</a>
+                <a href="#consultas" className="hidden md:flex font-['Inter'] text-white text-sm font-semibold capitalize cursor-pointer bg-emerald-800 px-4 py-2 rounded-md w-max hover:bg-[#D4A853] hover:text-emerald-950 transition-all duration-300 shadow-md">Agendar</a>
             </div>
             <div
                 className={`md:hidden bg-[#FDFAF3] w-full overflow-hidden transition-all duration-300 ease-in-out ${menu ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
