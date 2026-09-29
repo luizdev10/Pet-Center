@@ -43,12 +43,21 @@ function NavBar() {
                         </li>
                     ))}
                 </ul>
-                <button onClick={() => setMenu(!menu)} className="md:hidden text-zinc-500">
+                <button
+                    type="button"
+                    aria-label={menu ? "Fechar menu" : "Abrir menu"}
+                    aria-expanded={menu}
+                    aria-controls="menu-mobile"
+                    onClick={() => setMenu(!menu)}
+                    className="md:hidden text-zinc-500"
+                >
                     {menu ? <X size={30} /> : <Menu size={30} />}
                 </button>
                 <a href="#consultas" className="hidden md:flex font-['Inter'] text-white text-sm font-semibold capitalize cursor-pointer bg-emerald-800 px-4 py-2 rounded-md w-max hover:bg-[#D4A853] hover:text-emerald-950 transition-all duration-300 shadow-md">Agendar</a>
             </div>
             <div
+                id="menu-mobile"
+                inert={!menu}
                 className={`md:hidden bg-[#FDFAF3] w-full overflow-hidden transition-all duration-300 ease-in-out ${menu ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
             >
