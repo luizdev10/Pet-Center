@@ -5,6 +5,7 @@ const links = [
   { texto: "Sobre nós", destino: "#sobre" },
   { texto: "Banho e tosa", destino: "#banhoetosa" },
   { texto: "Consultas", destino: "#consultas" },
+  { texto: "Privacidade", destino: "#privacidade" },
 ];
 
 export default function Footer() {

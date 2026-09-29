@@ -252,10 +252,20 @@ Informações adicionais: ${obter("observacoes")}
               
             </fieldset>
 
-            <p className="text-sm leading-relaxed text-stone-500">
-              Ao continuar, as informações preenchidas serão incluídas em uma
-              mensagem do WhatsApp para a clínica. O envio não confirma o
-              agendamento; a equipe combinará o horário com você.
+            <p className="rounded-lg border border-teal-200 bg-teal-50 p-4 text-sm leading-relaxed text-stone-700">
+              <strong>Privacidade:</strong> ao continuar, os dados informados
+              serão incluídos no texto de uma mensagem de WhatsApp dirigida ao
+              estabelecimento para responder ao seu pedido ou agendamento. O
+              site não envia esses dados a um backend próprio. O WhatsApp abrirá
+              a mensagem preenchida para você revisar e enviar; evite incluir
+              informações sensíveis. Consulte a{" "}
+              <a
+                href="#privacidade"
+                className="font-semibold text-teal-800 underline underline-offset-2 hover:text-teal-950"
+              >
+                política de privacidade
+              </a>
+              .
             </p>
 
             <button
