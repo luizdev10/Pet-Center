@@ -5,6 +5,7 @@ import Sobre from "./pages/sobre";
 import BanhoTosa from "./pages/banhoetosa";
 import Consultas from "./pages/consulta";
 import Footer from "./pages/footer";
+import Privacidade from "./pages/privacidade";
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
      {/* <Shop />*/}
     <BanhoTosa />
     <Consultas />
-    <Footer />
+      <Privacidade />
+      <Footer />
     </>
   )
 }

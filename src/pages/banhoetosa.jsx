@@ -309,6 +309,23 @@ Quanto ficaria o serviço?`.trim();
                       required
                     />
                   </div>
+                  <p className="rounded-lg border border-orange-200 bg-orange-50 p-3 text-sm leading-relaxed text-gray-700">
+                    <strong>Privacidade:</strong> ao continuar, os dados
+                    informados serão incluídos no texto de uma mensagem de
+                    WhatsApp dirigida ao estabelecimento para responder ao seu
+                    pedido ou agendamento. O site não envia esses dados a um
+                    backend próprio. O WhatsApp abrirá a mensagem preenchida
+                    para você revisar e enviar; evite incluir informações
+                    sensíveis. Consulte a{" "}
+                    <a
+                      href="#privacidade"
+                      onClick={() => setModalAgendar(false)}
+                      className="font-semibold text-orange-800 underline underline-offset-2 hover:text-orange-950"
+                    >
+                      política de privacidade
+                    </a>
+                    .
+                  </p>
                   <p className="text-center text-[10px] text-red-500">
                     *Os valores podem sofrer alterações conforme o tamanho do pet*
                   </p>
