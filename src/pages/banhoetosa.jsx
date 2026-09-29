@@ -19,41 +19,31 @@ export default function BanhoTosa() {
     };
   }, [modalAgendar]);
 
-  const [form, setForm] = useState({
-    nomeTutor: "",
-    nomePet: "",
-    telefone: "",
-    porte: "",
-    raca: "",
-  });
-
-  function armazenarForm(event) {
-    const { name, value } = event.target;
-
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  function abrirAgendamento(servico) {
+    setServicoDesejado(servico);
+    setModalAgendar(true);
   }
 
   function enviarWhatsBanho(event) {
     event.preventDefault();
+    const dados = new FormData(event.currentTarget);
+    const obter = (campo) => String(dados.get(campo) ?? "");
 
     const mensagem = `Olá, tudo bem? Gostaria de agendar um serviço.
 
 Serviço: ${servicoDesejado}
-Nome do tutor: ${form.nomeTutor}
-Nome do pet: ${form.nomePet}
-Telefone: ${form.telefone}
-Porte: ${form.porte}
-Raça: ${form.raca}
+Nome do tutor: ${obter("nomeTutor")}
+Nome do pet: ${obter("nomePet")}
+Telefone: ${obter("telefone")}
+Porte: ${obter("porte")}
+Raça: ${obter("raca")}
 
 Quanto ficaria o serviço?`.trim();
 
     const urlEnvio =
       "https://wa.me/5588988853140?text=" + encodeURIComponent(mensagem);
 
-    window.open(urlEnvio, "_blank");
+    window.open(urlEnvio, "_blank", "noopener,noreferrer");
   }
 
   const servicos = [
@@ -91,9 +81,9 @@ Quanto ficaria o serviço?`.trim();
               {" "}
               BANHO & TOSA
             </p>
-            <h1 className="font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter'] ">
+            <h2 className="font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter'] ">
               Cuidado, carinho e bem-estar para seu pet
-            </h1>
+            </h2>
 
             <div className="flex items-center md:pt-8">
               <p className="text-gray-600 text-sm md:text-lg">
@@ -103,12 +93,14 @@ Quanto ficaria o serviço?`.trim();
             </div>
 
             <div className="pt-4 flex gap-4">
-              <a
-                href="#servicos"
+              <button
+                type="button"
+                aria-haspopup="dialog"
+                onClick={() => abrirAgendamento("Banho")}
                 className="bg-orange-500 p-3 text-white text-sm flex text-center items-center rounded-md cursor-pointer font-['Inter'] font-semibold capitalize hover:bg-orange-400"
               >
                 Agendar Banho
-              </a>
+              </button>
               <a
                 href="#servicos"
                 className=" p-3 font-['Inter'] capitalize text-sm flex text-center items-center border-2 border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition-colors duration-300 cursor-pointer"
@@ -141,9 +133,9 @@ Quanto ficaria o serviço?`.trim();
             <p className="text-orange-500 font-['Inter'] text-sm">
               NOSSOS SERVIÇOS
             </p>
-            <h1 className="text-center font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter']">
+            <h2 className="text-center font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter']">
               Tudo para manter seu pet bem cuidado.
-            </h1>
+            </h2>
             <p className="text-orange-600 text-md w-80 text-center md:text-lg lg:w-100">
               Escolha os serviços para as necessidades do seu pet.
             </p>
@@ -177,10 +169,9 @@ Quanto ficaria o serviço?`.trim();
                   </div>
 
                   <button
-                    onClick={() => {
-                      setModalAgendar(true);
-                      setServicoDesejado(item.nome);
-                    }}
+                    type="button"
+                    aria-haspopup="dialog"
+                    onClick={() => abrirAgendamento(item.nome)}
                     className="bg-orange-500 px-4 py-2 text-white text-sm text-center rounded-lg cursor-pointer font-['Inter'] font-semibold hover:bg-orange-400 transition-colors shadow-sm"
                   >
                     Agendar Banho
@@ -241,8 +232,6 @@ Quanto ficaria o serviço?`.trim();
                     <input
                       id="nomeTutor"
                       name="nomeTutor"
-                      value={form.nomeTutor}
-                      onChange={armazenarForm}
                       type="text"
                       placeholder="Digite seu nome"
                       className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
@@ -261,8 +250,6 @@ Quanto ficaria o serviço?`.trim();
                     <input
                       id="nomePet"
                       name="nomePet"
-                      value={form.nomePet}
-                      onChange={armazenarForm}
                       type="text"
                       placeholder="Digite o nome do pet"
                       className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
@@ -281,8 +268,6 @@ Quanto ficaria o serviço?`.trim();
                     <input
                       id="telefone"
                       name="telefone"
-                      value={form.telefone}
-                      onChange={armazenarForm}
                       type="tel"
                       placeholder="(XX) XXXXX-XXXX"
                       className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
@@ -298,8 +283,6 @@ Quanto ficaria o serviço?`.trim();
                     <select
                       id="porte"
                       name="porte"
-                      value={form.porte}
-                      onChange={armazenarForm}
                       className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
                       required
                     >
@@ -320,8 +303,6 @@ Quanto ficaria o serviço?`.trim();
                     <input
                       id="raca"
                       name="raca"
-                      value={form.raca}
-                      onChange={armazenarForm}
                       type="text"
                       placeholder="Digite a raça do pet"
                       className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
