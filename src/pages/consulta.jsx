@@ -1,4 +1,60 @@
+import { useState } from "react";
+
 export default function Consultas() {
+  const [motivo, setMotivo] = useState("");
+  const [especie, setSpecie] = useState("");
+  const other = "Outros";
+  const other2 = "Outros";
+
+  const Especies = [
+    {
+      id: 1,
+      nome: "Cachorro"
+    },
+    {
+      id: 2,
+      nome: "Gato"
+    },
+    {
+      id: 3,
+      nome: other
+    }
+  ]
+
+  const consultas = [
+    {
+      id: 1,
+      nome: "Vacinação"
+    },
+    {
+      id: 2,
+      nome: "Retorno"
+    },
+    {
+      id: 3,
+      nome: "Consulta geral"
+    },
+    {
+      id: 4,
+      nome: "Exames"
+    },
+    {
+      id: 5,
+      nome: "Cirurgia"
+    },
+    {
+      id: 6,
+      nome: "Emergência"
+    },
+    {
+      id: 7,
+      nome: other
+    }
+  ]
+  const isOther = motivo === other;
+  const isOther2 = especie === other2;
+
+
   function enviarParaWhatsApp(event) {
     event.preventDefault();
 
@@ -7,6 +63,12 @@ export default function Consultas() {
 
     const obter = (campo) =>
       String(dados.get(campo) || "Não informado");
+
+    const obterComOutro = (campo, campoOutro, valorOutro) => {
+  if (obter(campo) !== valorOutro) return obter(campo);
+
+  return String(dados.get(campoOutro) || "").trim() || "Não informado";
+};
 
     const mensagem = `
 Olá! Gostaria de agendar uma consulta.
@@ -17,17 +79,17 @@ Telefone: ${obter("telefone")}
 
 DADOS DO PET
 Nome: ${obter("nomePet")}
-Espécie: ${obter("especie")}
+Espécie: ${obterComOutro("especie", "outra", other2)}
 Raça: ${obter("raca")}
 Idade: ${obter("idade")}
 
 SOBRE A CONSULTA
-Motivo: ${obter("motivo")}
+Motivo: ${obterComOutro("motivo", "outros", other)}
 Quando começou: ${obter("inicio")}
 Informações adicionais: ${obter("observacoes")}
     `.trim();
 
-    
+
     const numeroWhatsApp = "5588988853140";
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
       mensagem
@@ -141,6 +203,8 @@ Informações adicionais: ${obter("observacoes")}
                   <select
                     id="especie"
                     name="especie"
+                    value={especie}
+                    onChange={(e) => {setSpecie(e.target.value) }}
                     defaultValue=""
                     className={campoClass}
                     required
@@ -148,10 +212,14 @@ Informações adicionais: ${obter("observacoes")}
                     <option value="" disabled>
                       Selecione
                     </option>
-                    <option value="Cachorro">Cachorro</option>
-                    <option value="Gato">Gato</option>
-                    <option value="Outro">Outro</option>
+                    {Especies.map(item => (
+                      <option key={item.id} value={item.nome}>{item.nome}</option>
+                    ))}
+
                   </select>
+                    {isOther2 && (
+                      <input type="text" name="outra" placeholder="Qual espécie?" className="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 mt-3 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-100"  />
+                    )}
                 </div>
 
                 <div>
@@ -203,6 +271,8 @@ Informações adicionais: ${obter("observacoes")}
                 <select
                   id="motivo"
                   name="motivo"
+                  value={motivo}
+                  onChange={(e) => setMotivo(e.target.value)}
                   defaultValue=""
                   className={campoClass}
                   required
@@ -210,11 +280,30 @@ Informações adicionais: ${obter("observacoes")}
                   <option value="" disabled>
                     Selecione uma opção
                   </option>
-                  <option value="Consulta de rotina">Consulta de rotina</option>
-                  <option value="Vacinação">Vacinação</option>
-                  <option value="Retorno">Retorno</option>
-                  <option value="Outro">Outro</option>
+                  {consultas.map((consulta) => (
+                    <option key={consulta.id} value={consulta.nome}>
+                      {consulta.nome}
+                    </option>
+                  ))}
                 </select>
+
+                {isOther && (
+                  <div>
+                    <label
+                      htmlFor="outros"
+                      className="mb-2 block text-sm font-medium"
+                    >
+                      Qual o motivo?
+                    </label>
+                    <input
+                      id="outros"
+                      name="outros"
+                      type="text"
+                      placeholder="Digite o motivo"
+                      className={campoClass}
+                    />
+                  </div>
+                )}
               </div>
 
               <div>
@@ -249,7 +338,7 @@ Informações adicionais: ${obter("observacoes")}
                 />
               </div>
 
-              
+
             </fieldset>
 
             <p className="rounded-lg border border-teal-200 bg-teal-50 p-4 text-sm leading-relaxed text-stone-700">
