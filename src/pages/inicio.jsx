@@ -1,14 +1,14 @@
-import fundo1 from "../assets/img/imginicio.png";
+import fundo1 from "../assets/img/imginicio.webp";
 
 function Inicio() {
   return (
     <section
       id="inicio"
-      className="overflow-hidden bg-[#F7F1E1] px-5 pb-12 pt-28 font-['Inter'] md:px-10 md:pb-20 md:pt-32 lg:px-20"
+      className="overflow-hidden bg-brand-50 px-5 pb-12 pt-28 font-['Inter'] md:px-10 md:pb-20 md:pt-32 lg:px-20"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2 lg:gap-16">
         <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-orange-700">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">
             Pet Center
           </p>
 
@@ -26,14 +26,14 @@ function Inicio() {
               href="https://wa.me/5588988853140?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-orange-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-brand-800 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2"
             >
               Fale conosco
             </a>
 
             <a
               href="#servicos"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-orange-700 px-6 py-3 font-semibold text-orange-800 transition hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-700 px-6 py-3 font-semibold text-brand-800 transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2"
             >
               Conheça nossos serviços
             </a>
@@ -45,11 +45,15 @@ function Inicio() {
         </div>
 
         <div className="relative mx-auto w-full max-w-xl">
-          <div className="absolute -inset-3 rotate-3 rounded-[2rem] bg-orange-200/70" />
+          <div className="absolute -inset-3 rotate-3 rounded-[2rem] bg-brand-300/60" />
 
           <img
             src={fundo1}
             alt="Pet recebendo carinho e cuidados"
+            width="1100"
+            height="825"
+            fetchPriority="high"
+            decoding="async"
             className="relative aspect-[4/3] w-full rounded-[2rem] object-cover shadow-xl"
           />
 

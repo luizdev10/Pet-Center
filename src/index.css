@@ -1,5 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+
+/* Paleta derivada da logo da Pet Center: verde-petróleo da cruz (~#005050)
+   e o verde-água do cão (~#4CA89B), em uma escala utilizável. */
+@theme {
+  --color-brand-50: #eaf6f4;
+  --color-brand-100: #cdeae5;
+  --color-brand-200: #9fd8cf;
+  --color-brand-300: #6fc2b5;
+  --color-brand-400: #49a89b;
+  --color-brand-500: #2e8b7f;
+  --color-brand-600: #166f65;
+  --color-brand-700: #0c5c55;
+  --color-brand-800: #064b46;
+  --color-brand-900: #023230;
+  --color-brand-950: #011d1b;
+
+  --color-cream: #f7f1e1;
+  --color-cream-soft: #fdfaf3;
+}
 
 html,
 body,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fundomobile from "../assets/img/fundomobile.jpg";
+import fundomobile from "../assets/img/fundomobile.webp";
 
 export default function BanhoTosa() {
   const [modalAgendar, setModalAgendar] = useState(false);
@@ -74,10 +74,10 @@ Quanto ficaria o serviço?`.trim();
       <main>
         <section
           id="banhoetosa"
-          className="w-full h-full bg-[#F7F1E1] flex px-8 lg:justify-around scroll-mt-24"
+          className="w-full h-full bg-[#FBF0E2] flex px-8 lg:justify-around scroll-mt-24"
         >
           <div className="pt-12 w-full lg:w-120 ">
-            <p className="text-orange-500 font-['Inter'] text-sm">
+            <p className="text-brand-700 font-['Inter'] text-sm">
               {" "}
               BANHO & TOSA
             </p>
@@ -86,7 +86,7 @@ Quanto ficaria o serviço?`.trim();
             </h2>
 
             <div className="flex items-center md:pt-8">
-              <p className="text-gray-600 text-sm md:text-lg">
+              <p className="text-stone-600 text-sm md:text-lg">
                 Oferecemos serviços de banho e tosa pensados para manter seu pet
                 limpo, saudável e confortável.
               </p>
@@ -97,13 +97,13 @@ Quanto ficaria o serviço?`.trim();
                 type="button"
                 aria-haspopup="dialog"
                 onClick={() => abrirAgendamento("Banho")}
-                className="bg-orange-500 p-3 text-white text-sm flex text-center items-center rounded-md cursor-pointer font-['Inter'] font-semibold capitalize hover:bg-orange-400"
+                className="bg-brand-700 p-3 text-white text-sm flex text-center items-center rounded-md cursor-pointer font-['Inter'] font-semibold capitalize hover:bg-brand-600"
               >
                 Agendar Banho
               </button>
               <a
                 href="#servicos"
-                className=" p-3 font-['Inter'] capitalize text-sm flex text-center items-center border-2 border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition-colors duration-300 cursor-pointer"
+                className=" p-3 font-['Inter'] capitalize text-sm flex text-center items-center border-2 border-brand-700 rounded-md hover:bg-brand-700 hover:text-white transition-colors duration-300 cursor-pointer"
               >
                 Conhecer Serviços
               </a>
@@ -120,6 +120,10 @@ Quanto ficaria o serviço?`.trim();
             <img
               src={fundomobile}
               alt="Banho e Tosa"
+              width="1100"
+              height="1513"
+              loading="lazy"
+              decoding="async"
               className="h-80 w-80 lg:w-140 lg:h-100 object-cover rounded-3xl shadow-md"
             />
           </div>
@@ -127,16 +131,16 @@ Quanto ficaria o serviço?`.trim();
 
         <section
           id="servicos"
-          className="w-full h-full bg-orange-100 font-['Inter'] py-4 scroll-mt-24"
+          className="w-full h-full bg-brand-50 font-['Inter'] py-4 scroll-mt-24"
         >
           <div className="flex flex-col justify-center items-center px-4 pt-10">
-            <p className="text-orange-500 font-['Inter'] text-sm">
+            <p className="text-brand-700 font-['Inter'] text-sm">
               NOSSOS SERVIÇOS
             </p>
             <h2 className="text-center font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter']">
               Tudo para manter seu pet bem cuidado.
             </h2>
-            <p className="text-orange-600 text-md w-80 text-center md:text-lg lg:w-100">
+            <p className="text-brand-700 text-md w-80 text-center md:text-lg lg:w-100">
               Escolha os serviços para as necessidades do seu pet.
             </p>
             <p className="text-[10px] w-80 text-center font-light">
@@ -148,22 +152,22 @@ Quanto ficaria o serviço?`.trim();
             {servicos.map((item) => (
               <div
                 key={item.nome}
-                className="bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3 border border-gray-100 w-full"
+                className="bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3 border border-stone-100 w-full"
               >
-                <h3 className="font-bold text-lg text-gray-800">
+                <h3 className="font-bold text-lg text-stone-800">
                   {item.nome}
                 </h3>
 
-                <p className="font-light text-gray-600 text-sm leading-relaxed">
+                <p className="font-light text-stone-600 text-sm leading-relaxed">
                   {item.descricao}
                 </p>
 
-                <div className="flex items-center justify-between mt-1 border-t border-gray-50 pt-3">
+                <div className="flex items-center justify-between mt-1 border-t border-stone-100 pt-3">
                   <div className="flex flex-col">
-                    <span className="text-[10px] text-gray-400 uppercase tracking-wide">
+                    <span className="text-[10px] text-stone-400 uppercase tracking-wide">
                       a partir de
                     </span>
-                    <span className="font-bold text-lg text-gray-800">
+                    <span className="font-bold text-lg text-stone-800">
                       {item.preco}
                     </span>
                   </div>
@@ -172,7 +176,7 @@ Quanto ficaria o serviço?`.trim();
                     type="button"
                     aria-haspopup="dialog"
                     onClick={() => abrirAgendamento(item.nome)}
-                    className="bg-orange-500 px-4 py-2 text-white text-sm text-center rounded-lg cursor-pointer font-['Inter'] font-semibold hover:bg-orange-400 transition-colors shadow-sm"
+                    className="bg-brand-700 px-4 py-2 text-white text-sm text-center rounded-lg cursor-pointer font-['Inter'] font-semibold hover:bg-brand-600 transition-colors shadow-sm"
                   >
                     Agendar Banho
                   </button>
@@ -197,24 +201,24 @@ Quanto ficaria o serviço?`.trim();
                   type="button"
                   onClick={() => setModalAgendar(false)}
                   aria-label="Fechar formulário"
-                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-2xl text-gray-400 transition hover:bg-gray-100 hover:text-gray-700"
+                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-2xl text-stone-400 transition hover:bg-stone-100 hover:text-stone-700"
                 >
                   &times;
                 </button>
 
                 <div className="mb-6 pr-8">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-orange-500">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
                     Agendamento
                   </p>
 
                   <h3
                     id="titulo-agendamento"
-                    className="mt-1 text-2xl font-bold text-gray-800"
+                    className="mt-1 text-2xl font-bold text-stone-800"
                   >
                     Agendar serviço
                   </h3>
 
-                  <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                  <p className="mt-2 text-sm leading-relaxed text-stone-500">
                     Preencha seus dados e entraremos em contato para confirmar o
                     atendimento.
                   </p>
@@ -224,7 +228,7 @@ Quanto ficaria o serviço?`.trim();
                   <div className="flex flex-col gap-1">
                     <label
                       htmlFor="nomeTutor"
-                      className="text-sm font-medium text-gray-700"
+                      className="text-sm font-medium text-stone-700"
                     >
                       Seu nome
                     </label>
@@ -234,7 +238,7 @@ Quanto ficaria o serviço?`.trim();
                       name="nomeTutor"
                       type="text"
                       placeholder="Digite seu nome"
-                      className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                      className="rounded-lg border border-stone-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
                       required
                     />
                   </div>
@@ -242,7 +246,7 @@ Quanto ficaria o serviço?`.trim();
                   <div className="flex flex-col gap-1">
                     <label
                       htmlFor="nomePet"
-                      className="text-sm font-medium text-gray-700"
+                      className="text-sm font-medium text-stone-700"
                     >
                       Nome do pet
                     </label>
@@ -252,7 +256,7 @@ Quanto ficaria o serviço?`.trim();
                       name="nomePet"
                       type="text"
                       placeholder="Digite o nome do pet"
-                      className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                      className="rounded-lg border border-stone-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
                       required
                     />
                   </div>
@@ -260,7 +264,7 @@ Quanto ficaria o serviço?`.trim();
                   <div className="flex flex-col gap-1">
                     <label
                       htmlFor="telefone"
-                      className="text-sm font-medium text-gray-700"
+                      className="text-sm font-medium text-stone-700"
                     >
                       Telefone
                     </label>
@@ -270,20 +274,20 @@ Quanto ficaria o serviço?`.trim();
                       name="telefone"
                       type="tel"
                       placeholder="(XX) XXXXX-XXXX"
-                      className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                      className="rounded-lg border border-stone-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
                       required
                     />
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label htmlFor="porte" className="text-sm font-medium text-gray-700">
+                    <label htmlFor="porte" className="text-sm font-medium text-stone-700">
                       Porte do pet
                     </label>
 
                     <select
                       id="porte"
                       name="porte"
-                      className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                      className="rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-sm text-stone-700 outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
                       required
                     >
                       <option value="" disabled>
@@ -296,7 +300,7 @@ Quanto ficaria o serviço?`.trim();
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label htmlFor="raca" className="text-sm font-medium text-gray-700">
+                    <label htmlFor="raca" className="text-sm font-medium text-stone-700">
                       Raça
                     </label>
 
@@ -305,11 +309,11 @@ Quanto ficaria o serviço?`.trim();
                       name="raca"
                       type="text"
                       placeholder="Digite a raça do pet"
-                      className="rounded-lg border border-gray-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-100"
+                      className="rounded-lg border border-stone-300 px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-100"
                       required
                     />
                   </div>
-                  <p className="rounded-lg border border-orange-200 bg-orange-50 p-3 text-sm leading-relaxed text-gray-700">
+                  <p className="rounded-lg border border-brand-200 bg-brand-50 p-3 text-sm leading-relaxed text-stone-700">
                     <strong>Privacidade:</strong> ao continuar, os dados
                     informados serão incluídos no texto de uma mensagem de
                     WhatsApp dirigida ao estabelecimento para responder ao seu
@@ -320,7 +324,7 @@ Quanto ficaria o serviço?`.trim();
                     <a
                       href="#privacidade"
                       onClick={() => setModalAgendar(false)}
-                      className="font-semibold text-orange-800 underline underline-offset-2 hover:text-orange-950"
+                      className="font-semibold text-brand-800 underline underline-offset-2 hover:text-brand-900"
                     >
                       política de privacidade
                     </a>
@@ -335,7 +339,7 @@ Quanto ficaria o serviço?`.trim();
                     <button
                       type="button"
                       onClick={() => setModalAgendar(false)}
-                      className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-600 transition hover:bg-gray-100"
+                      className="rounded-lg border border-stone-300 px-5 py-2.5 text-sm font-semibold text-stone-600 transition hover:bg-stone-100"
                     >
                       Cancelar
                     </button>

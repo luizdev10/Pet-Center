@@ -71,7 +71,7 @@ Gostaria de saber mais informações.`;
     mensagem
   )}`;
 
-  window.open(url, "_blank");
+  window.open(url, "_blank", "noopener,noreferrer");
 }
 
 export default function Shop() {
@@ -93,11 +93,11 @@ export default function Shop() {
   return (
     <section
       id="shop"
-      className="bg-orange-50 px-5 py-16 md:px-10 lg:px-20 font-['Inter']"
+      className="bg-brand-50 px-5 py-16 md:px-10 lg:px-20 font-['Inter']"
     >
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <span className="font-semibold text-orange-500">
+          <span className="font-semibold text-brand-700">
             Produtos para seu pet
           </span>
 
@@ -127,7 +127,7 @@ export default function Shop() {
                   {produto.nome}
                 </h3>
 
-                <strong className="mt-3 block text-xl text-orange-500">
+                <strong className="mt-3 block text-xl text-brand-700">
                   {produto.preco}
                 </strong>
 
@@ -162,8 +162,8 @@ export default function Shop() {
                 onClick={() => setPaginaAtual(numeroDaPagina)}
                 className={`h-10 w-10 rounded-lg font-semibold ${
                   paginaAtual === numeroDaPagina
-                    ? "bg-orange-500 text-white"
-                    : "bg-white text-stone-700 hover:bg-orange-100"
+                    ? "bg-brand-700 text-white"
+                    : "bg-white text-stone-700 hover:bg-brand-50"
                 }`}
               >
                 {numeroDaPagina}

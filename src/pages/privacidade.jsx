@@ -85,7 +85,7 @@ export default function Privacidade() {
     >
       <div className="relative mx-auto max-w-4xl p-6 md:p-10">
         <div className="pr-12">
-          <p className="font-semibold uppercase tracking-widest text-teal-700">
+          <p className="font-semibold uppercase tracking-widest text-brand-700">
             Transparência
           </p>
           <h2
@@ -100,7 +100,7 @@ export default function Privacidade() {
           autoFocus
           aria-label="Fechar política de privacidade"
           onClick={() => dialogRef.current.close()}
-          className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full text-stone-500 transition hover:bg-stone-100 hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-teal-600 md:right-10 md:top-10"
+          className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full text-stone-500 transition hover:bg-stone-100 hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-brand-600 md:right-10 md:top-10"
         >
           <svg
             aria-hidden="true"
@@ -205,7 +205,7 @@ export default function Privacidade() {
               href="https://wa.me/558898110518"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex rounded-lg border border-teal-200 bg-teal-50 p-4 font-semibold text-teal-900 underline underline-offset-2 transition hover:bg-teal-100 focus:outline-none focus:ring-2 focus:ring-teal-600"
+              className="mt-2 inline-flex rounded-lg border border-brand-200 bg-brand-50 p-4 font-semibold text-brand-900 underline underline-offset-2 transition hover:bg-brand-100 focus:outline-none focus:ring-2 focus:ring-brand-600"
             >
               WhatsApp: (88) 9811-0518
             </a>

@@ -100,7 +100,7 @@ Informações adicionais: ${obter("observacoes")}
   }
 
   const campoClass =
-    "w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-100";
+    "w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-100";
 
   return (
     <main id="consultas" className="bg-stone-50 text-stone-800">
@@ -108,7 +108,7 @@ Informações adicionais: ${obter("observacoes")}
       <section className="px-5 py-16 md:px-10 lg:px-20">
         <div className="mx-auto max-w-3xl">
           <div className="mb-8 text-center">
-            <p className="font-semibold uppercase tracking-widest text-teal-700">
+            <p className="font-semibold uppercase tracking-widest text-brand-700">
               Agendamento
             </p>
 
@@ -218,7 +218,7 @@ Informações adicionais: ${obter("observacoes")}
 
                   </select>
                     {isOther2 && (
-                      <input type="text" name="outra" placeholder="Qual espécie?" className="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 mt-3 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-100"  />
+                      <input type="text" name="outra" placeholder="Qual espécie?" className="w-full rounded-lg border border-stone-300 bg-white px-4 py-3 mt-3 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-100"  />
                     )}
                 </div>
 
@@ -341,7 +341,7 @@ Informações adicionais: ${obter("observacoes")}
 
             </fieldset>
 
-            <p className="rounded-lg border border-teal-200 bg-teal-50 p-4 text-sm leading-relaxed text-stone-700">
+            <p className="rounded-lg border border-brand-200 bg-brand-50 p-4 text-sm leading-relaxed text-stone-700">
               <strong>Privacidade:</strong> ao continuar, os dados informados
               serão incluídos no texto de uma mensagem de WhatsApp dirigida ao
               estabelecimento para responder ao seu pedido ou agendamento. O
@@ -350,7 +350,7 @@ Informações adicionais: ${obter("observacoes")}
               informações sensíveis. Consulte a{" "}
               <a
                 href="#privacidade"
-                className="font-semibold text-teal-800 underline underline-offset-2 hover:text-teal-950"
+                className="font-semibold text-brand-800 underline underline-offset-2 hover:text-brand-900"
               >
                 política de privacidade
               </a>
@@ -359,7 +359,7 @@ Informações adicionais: ${obter("observacoes")}
 
             <button
               type="submit"
-              className="w-full rounded-lg bg-teal-700 px-6 py-3 font-semibold text-white transition hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              className="w-full rounded-lg bg-brand-700 px-6 py-3 font-semibold text-white transition hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2"
             >
               Continuar pelo WhatsApp
             </button>

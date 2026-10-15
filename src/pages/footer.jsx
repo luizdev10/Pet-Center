@@ -14,15 +14,15 @@ export default function Footer() {
   const mensagem = encodeURIComponent("Olá! Tudo bem?");
 
   return (
-    <footer className="bg-teal-950 text-white">
+    <footer className="bg-brand-900 text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-3">
         <div>
           <a href="#inicio" className="inline-flex items-center gap-3">
-            <PawPrint aria-hidden="true" className="h-8 w-8 text-teal-300" />
+            <PawPrint aria-hidden="true" className="h-8 w-8 text-brand-300" />
             <span className="text-xl font-bold">PET CENTER</span>
           </a>
 
-          <p className="mt-4 max-w-sm leading-relaxed text-teal-100">
+          <p className="mt-4 max-w-sm leading-relaxed text-brand-100">
             Cuidado, carinho e atenção para seu pet em todas as fases da vida.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function Footer() {
               <li key={link.destino}>
                 <a
                   href={link.destino}
-                  className="text-teal-100 transition hover:text-white hover:underline"
+                  className="text-brand-100 transition hover:text-white hover:underline"
                 >
                   {link.texto}
                 </a>
@@ -47,7 +47,7 @@ export default function Footer() {
         <div>
           <h2 className="mb-4 text-lg font-semibold">Entre em contato</h2>
 
-          <ul className="space-y-4 text-teal-100">
+          <ul className="space-y-4 text-brand-100">
             <li className="flex items-start gap-3">
               <Phone aria-hidden="true" className="mt-1 h-5 w-5 shrink-0" />
               <a
@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-teal-800 px-6 py-5 text-center text-sm text-teal-200">
+      <div className="border-t border-brand-800 px-6 py-5 text-center text-sm text-brand-200">
         © {anoAtual} Pet Center. Todos os direitos reservados.
       </div>
     </footer>
