@@ -41,7 +41,7 @@ Raça: ${obter("raca")}
 Quanto ficaria o serviço?`.trim();
 
     const urlEnvio =
-      "https://wa.me/5500000000000?text=" + encodeURIComponent(mensagem);
+      "https://wa.me/5588933002233?text=" + encodeURIComponent(mensagem);
 
     window.open(urlEnvio, "_blank", "noopener,noreferrer");
   }
@@ -79,7 +79,7 @@ Quanto ficaria o serviço?`.trim();
           <div className="pt-12 w-full lg:w-120 ">
             <p className="text-brand-700 font-['Inter'] text-sm">
               {" "}
-              BANHO & TOSA
+              ESTÉTICA PREMIUM
             </p>
             <h2 className="font-bold text-4xl pt-5 pb-1 md:text-5xl font-['Inter'] ">
               Cuidado, carinho e bem-estar para seu pet
@@ -87,7 +87,7 @@ Quanto ficaria o serviço?`.trim();
 
             <div className="flex items-center md:pt-8">
               <p className="text-stone-600 text-sm md:text-lg">
-                Oferecemos serviços de banho e tosa pensados para manter seu pet
+                Oferecemos banho, tosa e estética pensados para manter seu pet
                 limpo, saudável e confortável.
               </p>
             </div>

@@ -58,7 +58,7 @@ const produtos = [
 ];
 
 function comprarProduto(produto) {
-  const telefone = "5500000000000";
+  const telefone = "5588933002233";
 
   const mensagem = `Olá! Tenho interesse no produto:
 

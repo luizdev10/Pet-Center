@@ -9,7 +9,7 @@ function Inicio() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2 lg:gap-16">
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">
-            Nome da Clínica
+            Juavet
           </p>
 
           <h1 className="max-w-2xl text-4xl font-bold leading-tight text-stone-900 sm:text-5xl lg:text-6xl">
@@ -17,13 +17,24 @@ function Inicio() {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-stone-700 sm:text-lg">
-            Unimos carinho, tecnologia e profissionais especializados para
-            cuidar da saúde e da alegria do seu melhor amigo.
+            Solução completa para quem você ama: clínica, farmácia e estética
+            premium em um só lugar.
           </p>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {["Clínica", "Farmácia", "Estética Premium"].map((pilar) => (
+              <span
+                key={pilar}
+                className="rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-800"
+              >
+                {pilar}
+              </span>
+            ))}
+          </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="https://wa.me/5500000000000?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os."
+              href="https://wa.me/5588933002233?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-xl bg-brand-800 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2"

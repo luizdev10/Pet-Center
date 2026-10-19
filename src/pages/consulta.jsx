@@ -40,14 +40,10 @@ export default function Consultas() {
     },
     {
       id: 5,
-      nome: "Cirurgia"
-    },
-    {
-      id: 6,
       nome: "Emergência"
     },
     {
-      id: 7,
+      id: 6,
       nome: other
     }
   ]
@@ -90,7 +86,7 @@ Informações adicionais: ${obter("observacoes")}
     `.trim();
 
 
-    const numeroWhatsApp = "5500000000000";
+    const numeroWhatsApp = "5588933002233";
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
       mensagem
     )}`;

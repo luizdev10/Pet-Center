@@ -19,7 +19,7 @@ function NavBar() {
             url: "#shop"
         },*/
         {
-            nome: "BANHO & TOSA",
+            nome: "ESTÉTICA",
             url: "#banhoetosa"
         },
         {
@@ -35,7 +35,7 @@ function NavBar() {
                     <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-800 md:h-12 md:w-12">
                         <PawPrint aria-hidden="true" className="h-6 w-6 text-white" />
                     </span>
-                    <div className="text-brand-800 text-lg md:text-1xl font-['Inter'] font-bold">NOME DA CLÍNICA</div>
+                    <div className="text-brand-800 text-lg md:text-1xl font-['Inter'] font-bold">JUAVET</div>
                 </div>
                 <ul className="md:flex hidden gap-6">
                     {links.map((link) => (

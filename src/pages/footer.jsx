@@ -3,14 +3,14 @@ import { Clock3, MapPin, PawPrint, Phone } from "lucide-react";
 const links = [
   { texto: "Início", destino: "#inicio" },
   { texto: "Sobre nós", destino: "#sobre" },
-  { texto: "Banho e tosa", destino: "#banhoetosa" },
+  { texto: "Estética", destino: "#banhoetosa" },
   { texto: "Consultas", destino: "#consultas" },
   { texto: "Privacidade", destino: "#privacidade" },
 ];
 
 export default function Footer() {
   const anoAtual = new Date().getFullYear();
-  const telefone = "5500000000000";
+  const telefone = "5588933002233";
   const mensagem = encodeURIComponent("Olá! Tudo bem?");
 
   return (
@@ -19,11 +19,11 @@ export default function Footer() {
         <div>
           <a href="#inicio" className="inline-flex items-center gap-3">
             <PawPrint aria-hidden="true" className="h-8 w-8 text-brand-300" />
-            <span className="text-xl font-bold">NOME DA CLÍNICA</span>
+            <span className="text-xl font-bold">JUAVET</span>
           </a>
 
           <p className="mt-4 max-w-sm leading-relaxed text-brand-100">
-            Cuidado, carinho e atenção para seu pet em todas as fases da vida.
+            Clínica, farmácia e estética premium para quem você ama.
           </p>
         </div>
 
@@ -62,15 +62,19 @@ export default function Footer() {
 
             <li className="flex items-start gap-3">
               <Clock3 aria-hidden="true" className="mt-1 h-5 w-5 shrink-0" />
-              <span>Segunda a sábado, das 8h às 18h</span>
+              <span>
+                <span>Segunda a sexta, 8h às 17h</span>
+                <br />
+                <span>Sábado, 8h às 14h</span>
+              </span>
             </li>
 
             <li className="flex items-start gap-3">
               <MapPin aria-hidden="true" className="mt-1 h-5 w-5 shrink-0" />
               <span>
-                <span>Rua Exemplo, 123</span>
+                <span>R. do Cruzeiro, 1606 - Centro</span>
                 <br />
-                <span>Centro - Sua Cidade/UF</span>
+                <span>Juazeiro do Norte - CE, 63010-485</span>
               </span>
             </li>
           </ul>
@@ -78,7 +82,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-brand-800 px-6 py-5 text-center text-sm text-brand-200">
-        © {anoAtual} Nome da Clínica. Todos os direitos reservados.
+        © {anoAtual} Juavet. Todos os direitos reservados.
       </div>
     </footer>
   );

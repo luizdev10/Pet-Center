@@ -1,11 +1,11 @@
-import fotoFundo from "../assets/img/sobrefundo.webp";
+import fotoFundo from "../assets/img/fundomobile.webp";
 
 function Sobre() {
     const servicos = [
         { id: 1, nome: "Consultas" },
-        { id: 2, nome: "Cirurgia" },
-        { id: 3, nome: "Castração" },
-        { id: 4, nome: "Vacinação" },
+        { id: 2, nome: "Vacinação" },
+        { id: 3, nome: "Farmácia" },
+        { id: 4, nome: "Estética Premium" },
         { id: 5, nome: "e muito mais!" }
     ];
 
@@ -29,17 +29,17 @@ function Sobre() {
                         </h2>
 
                         <p className="text-stone-600 text-base md:text-lg leading-relaxed">
-                            A nossa história começou há 6 anos com um objetivo simples, mas poderoso: oferecer medicina veterinária de excelência com o amor e o carinho que os nossos animais merecem. Ao longo desta trajetória, crescemos, modernizamos o nosso espaço e formamos uma equipe apaixonada. Hoje, orgulhamo-nos de ser uma referência na região, acompanhando o seu melhor amigo desde os primeiros passos.
+                            Na Juavet, unimos clínica, farmácia e estética premium em um só lugar, com uma equipe dedicada a cuidar de quem você ama com atenção e carinho em cada visita.
                         </p>
 
                         <div className="grid grid-cols-3 gap-6 pt-4 border-t border-stone-300">
                             <div>
-                                <span className="block text-2xl md:text-3xl font-bold text-brand-700">+6 anos</span>
-                                <span className="text-stone-500 text-sm">de experiência</span>
+                                <span className="block text-2xl md:text-3xl font-bold text-brand-700">5,0 ★</span>
+                                <span className="text-stone-500 text-sm">Avaliação Google</span>
                             </div>
                             <div>
-                                <span className="block text-2xl md:text-3xl font-bold text-brand-700">2 mil</span>
-                                <span className="text-stone-500 text-sm">Pets atendidos</span>
+                                <span className="block text-2xl md:text-3xl font-bold text-brand-700">65+</span>
+                                <span className="text-stone-500 text-sm">Avaliações</span>
                             </div>
                             <div>
                                 <span className="block text-2xl md:text-3xl font-bold text-brand-700">100%</span>
@@ -49,15 +49,15 @@ function Sobre() {
                     </div>
 
                     <div className="relative">
-                        <div className="overflow-hidden">
+                        <div className="overflow-hidden rounded-[2rem]">
                             <img
                                 src={fotoFundo}
-                                alt="Ilustração comemorativa de 6 anos da clínica"
+                                alt="Pet recebendo boas-vindas na Juavet"
                                 width="1100"
-                                height="600"
+                                height="1513"
                                 loading="lazy"
                                 decoding="async"
-                                className="w-full h-auto object-cover"
+                                className="aspect-[4/5] w-full object-cover"
                             />
                         </div>
                        
