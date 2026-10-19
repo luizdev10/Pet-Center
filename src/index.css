@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Paleta derivada da logo da Pet Center: verde-petróleo da cruz (~#005050)
+/* Paleta derivada da logo da clínica: verde-petróleo da cruz (~#005050)
    e o verde-água do cão (~#4CA89B), em uma escala utilizável. */
 @theme {
   --color-brand-50: #eaf6f4;

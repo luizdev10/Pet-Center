@@ -41,7 +41,7 @@ Raça: ${obter("raca")}
 Quanto ficaria o serviço?`.trim();
 
     const urlEnvio =
-      "https://wa.me/5588988853140?text=" + encodeURIComponent(mensagem);
+      "https://wa.me/5500000000000?text=" + encodeURIComponent(mensagem);
 
     window.open(urlEnvio, "_blank", "noopener,noreferrer");
   }

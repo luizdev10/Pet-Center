@@ -202,12 +202,12 @@ export default function Privacidade() {
               o WhatsApp da empresa:
             </p>
             <a
-              href="https://wa.me/558898110518"
+              href="https://wa.me/5500000000000"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-flex rounded-lg border border-brand-200 bg-brand-50 p-4 font-semibold text-brand-900 underline underline-offset-2 transition hover:bg-brand-100 focus:outline-none focus:ring-2 focus:ring-brand-600"
             >
-              WhatsApp: (88) 9811-0518
+              WhatsApp: (00) 00000-0000
             </a>
           </section>
         </div>

@@ -52,7 +52,7 @@ function Sobre() {
                         <div className="overflow-hidden">
                             <img
                                 src={fotoFundo}
-                                alt="Ilustração comemorativa de 6 anos da Pet Center"
+                                alt="Ilustração comemorativa de 6 anos da clínica"
                                 width="1100"
                                 height="600"
                                 loading="lazy"
