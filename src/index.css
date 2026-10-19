@@ -1,19 +1,30 @@
 @import "tailwindcss";
 
-/* Paleta derivada da logo da clínica: verde-petróleo da cruz (~#005050)
-   e o verde-água do cão (~#4CA89B), em uma escala utilizável. */
+/* Paleta derivada da logo da Juavet: verde-oliva do selo (~#506048)
+   e o dourado do texto/anel (~#e0c898), em escalas utilizáveis. */
 @theme {
-  --color-brand-50: #eaf6f4;
-  --color-brand-100: #cdeae5;
-  --color-brand-200: #9fd8cf;
-  --color-brand-300: #6fc2b5;
-  --color-brand-400: #49a89b;
-  --color-brand-500: #2e8b7f;
-  --color-brand-600: #166f65;
-  --color-brand-700: #0c5c55;
-  --color-brand-800: #064b46;
-  --color-brand-900: #023230;
-  --color-brand-950: #011d1b;
+  --color-brand-50: #f3f4ec;
+  --color-brand-100: #e3e7d4;
+  --color-brand-200: #c9d1ae;
+  --color-brand-300: #aab686;
+  --color-brand-400: #8b9c64;
+  --color-brand-500: #6e8249;
+  --color-brand-600: #586b40;
+  --color-brand-700: #52603f;
+  --color-brand-800: #4a5538;
+  --color-brand-900: #2a331d;
+  --color-brand-950: #1c2213;
+
+  --color-gold-50: #fcf9f1;
+  --color-gold-100: #f7efdc;
+  --color-gold-200: #eedfbb;
+  --color-gold-300: #e0c898;
+  --color-gold-400: #d3b679;
+  --color-gold-500: #c4a25c;
+  --color-gold-600: #a98742;
+  --color-gold-700: #866a33;
+  --color-gold-800: #614c25;
+  --color-gold-900: #3d3018;
 
   --color-cream: #f7f1e1;
   --color-cream-soft: #fdfaf3;

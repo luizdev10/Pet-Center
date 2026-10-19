@@ -1,4 +1,5 @@
-import { Clock3, MapPin, PawPrint, Phone } from "lucide-react";
+import { Clock3, MapPin, Phone } from "lucide-react";
+import logo from "../assets/img/logo-juavet.webp";
 
 const links = [
   { texto: "Início", destino: "#inicio" },
@@ -18,7 +19,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-3">
         <div>
           <a href="#inicio" className="inline-flex items-center gap-3">
-            <PawPrint aria-hidden="true" className="h-8 w-8 text-brand-300" />
+            <img src={logo} alt="Juavet" className="h-10 w-10" width="150" height="150" />
             <span className="text-xl font-bold">JUAVET</span>
           </a>
 

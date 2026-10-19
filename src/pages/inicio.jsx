@@ -37,7 +37,7 @@ function Inicio() {
               href="https://wa.me/5588933002233?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-brand-800 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-gold-400 px-6 py-3 font-semibold text-brand-900 shadow-md transition hover:bg-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-600 focus:ring-offset-2"
             >
               Fale conosco
             </a>
