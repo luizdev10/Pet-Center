@@ -86,7 +86,7 @@ Informações adicionais: ${obter("observacoes")}
     `.trim();
 
 
-    const numeroWhatsApp = "5588933002233";
+    const numeroWhatsApp = "5500000000000";
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
       mensagem
     )}`;

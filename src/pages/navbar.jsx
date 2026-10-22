@@ -1,6 +1,5 @@
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import logo from "../assets/img/logo-juavet.webp"
+import { Menu, PawPrint, X } from "lucide-react"
 
 
 function NavBar() {
@@ -33,8 +32,10 @@ function NavBar() {
         <nav className="bg-cream-soft top-0 left-0 fixed w-full z-[500] shadow-sm">
             <div className="flex justify-around items-center w-full px-6 py-2">
                 <div className="flex items-center gap-2">
-                    <img src={logo} alt="Juavet" className="h-11 w-11 md:h-12 md:w-12" width="150" height="150" />
-                    <div className="text-brand-800 text-lg md:text-1xl font-['Inter'] font-bold">JUAVET</div>
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-800 md:h-12 md:w-12">
+                        <PawPrint aria-hidden="true" className="h-6 w-6 text-white" />
+                    </span>
+                    <div className="text-brand-800 text-lg md:text-1xl font-['Inter'] font-bold">NOME DA CLÍNICA</div>
                 </div>
                 <ul className="md:flex hidden gap-6">
                     {links.map((link) => (

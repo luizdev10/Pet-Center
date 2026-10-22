@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
-/* Paleta derivada da logo da Juavet: verde-oliva do selo (~#506048)
-   e o dourado do texto/anel (~#e0c898), em escalas utilizáveis. */
+/* Paleta demo em verde-oliva e dourado, em escalas utilizáveis. */
 @theme {
   --color-brand-50: #f3f4ec;
   --color-brand-100: #e3e7d4;

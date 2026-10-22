@@ -29,17 +29,17 @@ function Sobre() {
                         </h2>
 
                         <p className="text-stone-600 text-base md:text-lg leading-relaxed">
-                            Na Juavet, unimos clínica, farmácia e estética premium em um só lugar, com uma equipe dedicada a cuidar de quem você ama com atenção e carinho em cada visita.
+                            Aqui, unimos clínica, farmácia e estética premium em um só lugar, com uma equipe dedicada a cuidar de quem você ama com atenção e carinho em cada visita.
                         </p>
 
                         <div className="grid grid-cols-3 gap-6 pt-4 border-t border-stone-300">
                             <div>
                                 <span className="block text-2xl md:text-3xl font-bold text-brand-700">5,0 ★</span>
-                                <span className="text-stone-500 text-sm">Avaliação Google</span>
+                                <span className="text-stone-500 text-sm">Avaliação</span>
                             </div>
                             <div>
-                                <span className="block text-2xl md:text-3xl font-bold text-brand-700">65+</span>
-                                <span className="text-stone-500 text-sm">Avaliações</span>
+                                <span className="block text-2xl md:text-3xl font-bold text-brand-700">100+</span>
+                                <span className="text-stone-500 text-sm">Clientes atendidos</span>
                             </div>
                             <div>
                                 <span className="block text-2xl md:text-3xl font-bold text-brand-700">100%</span>
@@ -52,7 +52,7 @@ function Sobre() {
                         <div className="overflow-hidden rounded-[2rem]">
                             <img
                                 src={fotoFundo}
-                                alt="Pet recebendo boas-vindas na Juavet"
+                                alt="Pet recebendo boas-vindas no espaço"
                                 width="1100"
                                 height="1513"
                                 loading="lazy"

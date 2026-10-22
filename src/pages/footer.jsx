@@ -1,5 +1,4 @@
-import { Clock3, MapPin, Phone } from "lucide-react";
-import logo from "../assets/img/logo-juavet.webp";
+import { Clock3, MapPin, PawPrint, Phone } from "lucide-react";
 
 const links = [
   { texto: "Início", destino: "#inicio" },
@@ -11,7 +10,7 @@ const links = [
 
 export default function Footer() {
   const anoAtual = new Date().getFullYear();
-  const telefone = "5588933002233";
+  const telefone = "5500000000000";
   const mensagem = encodeURIComponent("Olá! Tudo bem?");
 
   return (
@@ -19,8 +18,8 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-3">
         <div>
           <a href="#inicio" className="inline-flex items-center gap-3">
-            <img src={logo} alt="Juavet" className="h-10 w-10" width="150" height="150" />
-            <span className="text-xl font-bold">JUAVET</span>
+            <PawPrint aria-hidden="true" className="h-8 w-8 text-brand-300" />
+            <span className="text-xl font-bold">NOME DA CLÍNICA</span>
           </a>
 
           <p className="mt-4 max-w-sm leading-relaxed text-brand-100">
@@ -63,19 +62,15 @@ export default function Footer() {
 
             <li className="flex items-start gap-3">
               <Clock3 aria-hidden="true" className="mt-1 h-5 w-5 shrink-0" />
-              <span>
-                <span>Segunda a sexta, 8h às 17h</span>
-                <br />
-                <span>Sábado, 8h às 14h</span>
-              </span>
+              <span>Segunda a sábado, das 8h às 18h</span>
             </li>
 
             <li className="flex items-start gap-3">
               <MapPin aria-hidden="true" className="mt-1 h-5 w-5 shrink-0" />
               <span>
-                <span>R. do Cruzeiro, 1606 - Centro</span>
+                <span>Rua Exemplo, 123</span>
                 <br />
-                <span>Juazeiro do Norte - CE, 63010-485</span>
+                <span>Centro - Sua Cidade/UF</span>
               </span>
             </li>
           </ul>
@@ -83,7 +78,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-brand-800 px-6 py-5 text-center text-sm text-brand-200">
-        © {anoAtual} Juavet. Todos os direitos reservados.
+        © {anoAtual} Nome da Clínica. Todos os direitos reservados.
       </div>
     </footer>
   );
